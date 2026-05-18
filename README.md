@@ -126,7 +126,7 @@ This README is the top-level project document. Each subsystem has (or will have)
 The ESC/airframe board carries the full power electronics, sensorless commutation logic, voltage regulation, **and** acts as the structural airframe of the drone.
 
 <div align="center">
-<img src="pics/esc-hardware-blockdiagram.png" alt="ESC / Airframe board block diagram" width="560" />
+<img src="pics/esc-hardware-blockdiagram-bkg.png" alt="ESC / Airframe board block diagram" width="560" />
 </div>
 
 **Hardware**
