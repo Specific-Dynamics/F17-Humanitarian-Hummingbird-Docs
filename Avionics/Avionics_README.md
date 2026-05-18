@@ -58,7 +58,7 @@ The design went through two iterations. The first was a development board that u
 
 <!-- TODO: replace placeholder below with the flight control board render. Save the file as pics/flight-controller-render.png (or update the path/extension to match). -->
 ![Flight control board render](../pics/flight-controller-render.png)
-*Flight control board render (placeholder)*
+*Flight control board render*
 
 ### Board-to-Board Interface
 Soldered wire connections to the ESC board carry the **3.3 V** supply and ground on the power side, and **four PWM output lines** from the ESP32-S3 to the ESC board's STM32F405 on the signal side.
