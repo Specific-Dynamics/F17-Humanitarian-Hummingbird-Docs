@@ -77,7 +77,7 @@ The complete aircraft weighs **145 g** as built and flown, well within the 250 g
 The aircraft is a **two-board stacked drone** with a physically separate handheld controller communicating over a wireless link.
 
 <div align="center">
-<img src="pics/system-architecture.png" alt="High-level system architecture block diagram" width="380" />
+<img src="pics/system-architecture.png" alt="High-level system architecture block diagram" width="380" style="background-color: #1e1e1e;" />
 </div>
 
 The signal path runs end to end as follows:
