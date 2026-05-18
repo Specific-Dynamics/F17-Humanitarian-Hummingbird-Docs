@@ -109,17 +109,13 @@ This README is the top-level project document. Each subsystem has (or will have)
 │   └── firmware/                     ← STM32F405 bare-metal C firmware
 │       └── README.md                 ← BLDC ESC firmware reference
 ├── avionics/                         ← flight controller PCB + ESP32-S3 firmware
-│   └── README.md                     ← (to be added)
+│   └── README.md                     ← Flight Controller Firmware/Hardware notes
 ├── controller/                       ← handheld remote PCB + ESP32-C3 firmware
-│   └── README.md                     ← (to be added)
+│   └── README.md                     ← Controller Firmware/Hardware notes
 └── mechanical/                       ← 3D models (legs, prop guards, controller shell)
-    └── README.md                     ← (to be added)
 ```
 
-> The ESC hardware and firmware READMEs already exist (provided as `BrushlessMotorHardwareREADME.md`
-> and `BrushlessMotorFirmwareREADME.md`). The avionics, controller, and mechanical
-> subsystems are documented in the design specification and will receive dedicated
-> READMEs in future.
+> This repo only includes the documentation for this project if you would like to see the firmware or other design files please contact us.
 
 ---
 
