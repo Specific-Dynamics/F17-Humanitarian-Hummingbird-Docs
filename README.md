@@ -151,7 +151,7 @@ The board is **87 mm × 87 mm, 6-layer**, partitioned into a central signal regi
 All four motors run a sensorless **6-step trapezoidal commutation** scheme with BEMF zero-crossing detection. Each motor is governed by an independent state machine; motors are started in a staggered sequence to limit inrush current and ADC load.
 
 <div align="center">
-<img src="pics/esc-firmware-blockdiagram.png" alt="ESC firmware block diagram" width="620" />
+<img src="pics/esc-firmware-blockdiagram-bkg.png" alt="ESC firmware block diagram" width="620" />
 </div>
 
 State machine: `IDLE → ALIGN → OPENLOOP_RUN → MOTOR_RUN → FAULT`
@@ -173,7 +173,7 @@ Key implementation details: three ADCs in injected mode triggered simultaneously
 The avionics board houses the flight controller, inertial sensors, and wireless module. It stacks above the ESC board and is soft-mounted on rubber dampeners over nylon standoffs for vibration isolation.
 
 <div align="center">
-<img src="pics/flightcontroller-board-hardware-blockdiagram.png" alt="Avionics / Flight Controller board block diagram" width="460" />
+<img src="pics/flightcontroller-board-hardware-blockdiagram-bkg.png" alt="Avionics / Flight Controller board block diagram" width="460" />
 </div>
 
 | Block | Part | Role |
@@ -190,7 +190,7 @@ The board is **46 mm × 85.7 mm, 4-layer** with inner ground/power planes for se
 A **cascaded PID** architecture runs at a 1 kHz loop rate: an outer angle loop (pitch/roll) feeds an inner rate loop on all three axes; throttle is mixed at the final motor-mixing stage. Attitude is estimated by a **Mahony complementary filter** fusing gyro, accelerometer, and (opportunistically gated) magnetometer data. Yaw uses a rate loop rather than the cascaded angle structure so the aircraft holds whatever heading the pilot leaves it in.
 
 <div align="center">
-<img src="pics/flightcontroller-firmware-blockdiagram.png" alt="Flight controller firmware block diagram" width="620" />
+<img src="pics/flightcontroller-firmware-blockdiagram-bkg.png" alt="Flight controller firmware block diagram" width="620" />
 </div>
 
 Tuning followed a Ziegler-Nichols-inspired heuristic, refined empirically in flight. Final parameters (feedforward augmented; integral terms intentionally left at zero as steady-state error was acceptable):
@@ -210,7 +210,7 @@ Tuning followed a Ziegler-Nichols-inspired heuristic, refined empirically in fli
 The handheld controller provides the manual pilot interface and is a physically independent unit with its own 1S LiPo and USB-C charging.
 
 <div align="center">
-<img src="pics/controller-hardware-blockdiagram.png" alt="Handheld controller block diagram" width="380" />
+<img src="pics/controller-hardware-blockdiagram-bkg.png" alt="Handheld controller block diagram" width="380" />
 </div>
 
 | Block | Part | Role |
@@ -223,7 +223,7 @@ The handheld controller provides the manual pilot interface and is a physically 
 **Transmitter firmware** is a set of cooperating FreeRTOS tasks. The data path is: sample joystick ADCs at 100 Hz → first-order IIR filter (α = 0.15) → calibrated normalisation → ±3-count deadband → packetise with sequence number and microsecond timestamp → ESP-NOW transmit. A persistent NVS-backed calibration routine handles per-stick centre and travel. A critical safety rule forces throttle to zero before transmission whenever the arm switch is disengaged.
 
 <div align="center">
-<img src="pics/controller-firmware-blockdiagram.png" alt="Handheld controller firmware block diagram" width="420" />
+<img src="pics/controller-firmware-blockdiagram-bkg.png" alt="Handheld controller firmware block diagram" width="420" />
 </div>
 
 ---
@@ -235,7 +235,7 @@ ESP-NOW was chosen because it is native to the ESP32 already present on the avio
 The **receiver firmware** on the flight controller validates each packet (length, latency, sequence), maintains a clock-offset estimate from periodic sync packets for true end-to-end latency measurement, and runs a four-state **arming state machine**:
 
 <div align="center">
-<img src="pics/receiver-arming-statemachine.png" alt="Receiver arming state machine" width="540" />
+<img src="pics/receiver-arming-statemachine-bkg.png" alt="Receiver arming state machine" width="540" />
 </div>
 
 - **DISARMED** → **ARMED** only on a rising arm edge with throttle < 1 % for several consecutive packets (prevents arm-on-power-up).
