@@ -119,7 +119,7 @@ This README is the top-level project document. Each subsystem has (or will have)
 > The ESC hardware and firmware READMEs already exist (provided as `BrushlessMotorHardwareREADME.md`
 > and `BrushlessMotorFirmwareREADME.md`). The avionics, controller, and mechanical
 > subsystems are documented in the design specification and will receive dedicated
-> READMEs in a follow-up pass.
+> READMEs in future.
 
 ---
 
